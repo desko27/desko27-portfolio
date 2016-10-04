@@ -27,8 +27,12 @@ app.use(express.static('public'));
  * Require API routes
  */
 var timeline = require('./routes/timeline');
+var work = require('./routes/work');
+var labs = require('./routes/labs');
 
 app.use(`${API}/timeline`, timeline);
+app.use(`${API}/work`, work);
+app.use(`${API}/labs`, labs);
 
 
 /**
