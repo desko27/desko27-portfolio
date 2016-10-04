@@ -11,7 +11,7 @@
     "supervisor": "^0.11.0"
   },
   "scripts": {
-    "start": "supervisor app.js"
+    "start": "supervisor src/app.js"
   },
   "author": "desko27",
   "license": "ISC"
