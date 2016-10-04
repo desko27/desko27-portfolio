@@ -1,3 +1,6 @@
+# Browser dist files
+src/client/dist
+
 # Logs
 logs
 *.log

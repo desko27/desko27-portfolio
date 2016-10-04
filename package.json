@@ -8,10 +8,17 @@
   },
   "devDependencies": {
     "browser-sync": "^2.17.0",
+    "mkdirp": "^0.5.1",
     "supervisor": "^0.11.0"
   },
   "scripts": {
-    "start": "supervisor src/app.js"
+    "start": "npm run build && npm run serve-dev",
+    "serve": "node src/app.js",
+    "serve-dev": "supervisor src/app.js",
+    "clean": "rm -rf src/client/dist",
+    "build": "npm run clean && npm run build:path && npm run build:html",
+    "build:path": "mkdirp src/client/dist",
+    "build:html": "cp src/client/index.html src/client/dist/"
   },
   "author": "desko27",
   "license": "ISC"
