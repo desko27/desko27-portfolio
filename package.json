@@ -7,20 +7,20 @@
     "express": "^4.14.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.17.0",
+    "css-loader": "^0.25.0",
     "mkdirp": "^0.5.1",
-    "node-sass": "^3.10.1",
-    "supervisor": "^0.11.0"
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "supervisor": "^0.11.0",
+    "webpack": "^1.13.2"
   },
   "scripts": {
-    "start": "npm run build && npm run serve-dev",
-    "serve": "node src/app.js",
-    "serve-dev": "supervisor src/app.js",
+    "start": "npm run build && supervisor src/app.js",
     "clean": "rm -rf src/client/dist",
-    "build": "npm run clean && npm run build:path && npm run build:html && npm run build:css",
+    "build": "npm run clean && npm run build:path && npm run build:html && npm run build:webpack",
     "build:path": "mkdirp src/client/dist",
     "build:html": "cp src/client/index.html src/client/dist/",
-    "build:css": "node-sass src/client/styles/ -o src/client/dist/"
+    "build:webpack": "webpack -d"
   },
   "author": "desko27",
   "license": "ISC"
