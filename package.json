@@ -2,7 +2,7 @@
   "name": "desko27-portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/api.js",
   "dependencies": {
     "express": "^4.14.0"
   },
@@ -16,12 +16,16 @@
     "webpack": "^1.13.2"
   },
   "scripts": {
-    "start": "npm run build && supervisor src/app.js",
-    "clean": "rm -rf src/client/dist",
-    "build": "npm run clean && npm run build:path && npm run build:html && npm run build:webpack",
-    "build:path": "mkdirp src/client/dist",
-    "build:html": "cp src/client/index.html src/client/dist/",
-    "build:webpack": "webpack -d"
+    "start": "npm run start:api | npm run start:client",
+    "start:api": "supervisor src/api.js",
+    "start:client": "npm run client:build",
+    "client:clean": "rm -rf src/client/dist",
+    "client:build": "npm run client:clean && npm run client:build:path && npm run client:build:html && npm run client:build:webpack",
+    "client:build:path": "mkdirp src/client/dist",
+    "client:build:html": "cp src/client/index.html src/client/dist/",
+    "client:build:webpack": "webpack-dev-server -d --inline",
+    "client-production:build": "npm run client:clean && npm run client:build:path && npm run client:build:html && npm run client-production:build:webpack",
+    "client-production:build:webpack": "webpack -p"
   },
   "author": "desko27",
   "license": "ISC"

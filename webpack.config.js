@@ -8,6 +8,10 @@ module.exports = {
     filename: 'bundle.js'
   },
 
+  devServer: {
+    contentBase: 'src/client/dist'
+  },
+
   module: {
     loaders: [
       {
