@@ -4,12 +4,12 @@ module.exports = {
   context: path.resolve('src/client/scripts'),
   entry: ['./entry.js'],
   output: {
-    path: path.resolve('src/client/dist'),
+    path: path.resolve('src/client/public/dist'),
     filename: 'bundle.js'
   },
 
   devServer: {
-    contentBase: 'src/client/dist'
+    contentBase: 'src/client/public'
   },
 
   module: {

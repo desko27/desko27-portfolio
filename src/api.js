@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
 /**
  * Expose public dir
  */
-app.use(express.static(`${__dirname}/client/dist`));
+app.use(express.static(`${__dirname}/client/public`));
 
 
 /**

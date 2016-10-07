@@ -26,16 +26,15 @@
   "scripts": {
     "start": "npm run start:api | npm run start:client",
     "start:api": "supervisor src/api.js",
-    "start:client": "npm run client:onchange | npm run client:bsync | npm run client:build",
-    "client:onchange": "onchange \"src/client/*.html\" -- npm run client:build:html",
-    "client:bsync": "wait-on http://localhost:8080 && browser-sync start --proxy localhost:8080 --port 5000 --ui-port 5001 --files \"src/client/dist/*.html\"",
-    "client:clean": "rm -rf src/client/dist",
-    "client:build": "npm run client:clean && npm run client:build:path && npm run client:build:html && npm run client:build:webpack",
-    "client:build:path": "mkdirp src/client/dist",
-    "client:build:html": "cp -f src/client/*.html src/client/dist/",
+    "start:client": "npm run client:bsync | npm run client:build",
+    "client:bsync": "wait-on http://localhost:8080 && browser-sync start --proxy localhost:8080 --port 5000 --ui-port 5001 --files \"src/client/public/*.html\" \"src/client/public/assets/**/*.*\"",
+    "client:clean": "rm -rf src/client/public/dist",
+    "client:build": "npm run client:clean && npm run client:build:path && npm run client:build:webpack",
+    "client:build:path": "mkdirp src/client/public/dist",
     "client:build:webpack": "webpack-dev-server -d --inline --progress --colors",
-    "client-production:build": "npm run client:clean && npm run client:build:path && npm run client:build:html && npm run client-production:build:webpack",
-    "client-production:build:webpack": "webpack -p"
+    "client-production:build": "npm run client:clean && npm run client:build:path && npm run client-production:build:webpack",
+    "client-production:build:webpack": "webpack --config webpack-production.config.js -p",
+    "dist": "npm run client-production:build:webpack"
   },
   "author": "desko27",
   "license": "ISC"

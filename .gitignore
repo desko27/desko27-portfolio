@@ -1,5 +1,5 @@
-# Browser dist files
-src/client/dist
+# Browser-ready compiled files
+src/client/public/dist
 
 # Logs
 logs
