@@ -16,7 +16,6 @@
     "jshint": "^2.9.3",
     "jshint-loader": "^0.8.3",
     "mkdirp": "^0.5.1",
-    "onchange": "^3.0.2",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "supervisor": "^0.11.0",
