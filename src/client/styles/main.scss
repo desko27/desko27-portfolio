@@ -1,7 +1,9 @@
-@import "common/variables";
-@import "common/libs";
+@import
+  'common/variables',
+  'common/libs';
 
-@import "components/profile-picture";
+@import
+  'components/profile-picture';
 
 body {
   color: $color_base;

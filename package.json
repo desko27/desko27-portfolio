@@ -33,7 +33,7 @@
     "client:build:path": "mkdirp src/client/public/dist",
     "client:build:webpack": "webpack-dev-server -d --inline --progress --colors",
     "client-production:build": "npm run client:clean && npm run client:build:path && npm run client-production:build:webpack",
-    "client-production:build:webpack": "webpack --config webpack-production.config.js -p",
+    "client-production:build:webpack": "webpack --progress --colors --config webpack-production.config.js -p",
     "dist": "npm run client-production:build:webpack"
   },
   "author": "desko27",
