@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/api.js",
   "dependencies": {
+    "bootstrap-sass": "^3.3.7",
     "express": "^4.14.0"
   },
   "devDependencies": {

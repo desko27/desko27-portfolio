@@ -1,4 +1,7 @@
-$color_base: #f00;
+@import "common/variables";
+@import "common/libs";
+
+@import "components/profile-picture";
 
 body {
   color: $color_base;

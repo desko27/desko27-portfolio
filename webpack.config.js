@@ -30,7 +30,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: 'style-loader!css-loader?sourceMap!autoprefixer-loader!sass-loader?sourceMap'
+        loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
       }
     ]
   },
