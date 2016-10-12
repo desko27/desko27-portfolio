@@ -1,5 +1,10 @@
-#main {
-  .profile-picture img {
+.profile-picture {
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
     width: 100%;
   }
+  
 }

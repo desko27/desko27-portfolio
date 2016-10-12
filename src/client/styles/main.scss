@@ -1,10 +1,18 @@
 @import
-  'common/variables',
-  'common/libs';
+  'base/reset',
+  'base/typography';
 
 @import
-  'components/profile-picture';
+  'common/variables',
+  'common/libs',
+  'common/common';
 
-body {
-  color: $color_base;
-}
+@import
+  'layout/header',
+  'layout/main',
+  'layout/sections',
+  'layout/footer';
+
+@import
+  'components/profile-picture',
+  'components/text-slider';
