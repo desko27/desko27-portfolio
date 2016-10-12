@@ -1,4 +1,28 @@
-.text-slider {
+@keyframes blink {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.text-slider-wrapper {
   color: #fff;
   font-size: 70px;
+
+  // *hacky: take two lines of space
+  line-height: 2;
+  &:before { content: '\00a0'; }
+  position: relative;
+
+  .text-slider {
+    // *hacky: use '1' height lines,
+    // this way, the rest of the middle-aligned content is not moving
+    line-height: 1;
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+    &.is-typing:after {
+      content: '|';
+      animation: blink 500ms infinite;
+    }
+  }
 }

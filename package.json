@@ -5,7 +5,9 @@
   "main": "src/api.js",
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "jquery": "^3.1.1",
+    "theaterjs": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
