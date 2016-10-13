@@ -19,11 +19,13 @@
     "jshint": "^2.9.3",
     "jshint-loader": "^0.8.3",
     "mkdirp": "^0.5.1",
+    "node-sass": "^3.10.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "supervisor": "^0.11.0",
     "wait-on": "^1.5.3",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
     "start": "npm run start:api | npm run start:client",
