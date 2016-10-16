@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+
+$heading-font: 'Montserrat', sans-serif;
+$heading-font-size: 3em;
+
+$base-font: 'Lato', sans-serif;
+$base-font-size: 16px;
+
+%heading-font {
+  font-family: $heading-font;
+  font-size: $heading-font-size;
+  font-weight: bold;
+}
+
+%base-font {
+  font-family: $base-font;
+  font-size: $base-font-size;
+}
+
+body {
+
+  @extend %base-font;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font;
+    text-align: center;
+  }
+
+  h1 { font-size: 6em; font-weight: bold; }
+  h2 { font-size: $heading-font-size; font-weight: bold; }
+  h3 { font-size: 2em; font-weight: bold; }
+  h4 { font-size: 1.5em; font-weight: bold; }
+  h5 { font-size: 1.2em; }
+
+}

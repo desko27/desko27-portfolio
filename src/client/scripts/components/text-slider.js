@@ -19,9 +19,9 @@ $(document).ready(function() {
       actor.$element.classList.remove('is-typing');
     });
 
-  theater.addActor('text-slider', { accuracy: 1, speed: 1 });
+  theater.addActor('text-slider', { accuracy: 1, speed: 1.05 });
   theater
-    .addScene('text-slider:Full-Stack Web Developer', 1750)
+    .addScene('text-slider:Full-Stack Web Developer', 2000)
     .addScene(theater.replay);
 
 });
