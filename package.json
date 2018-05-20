@@ -1,0 +1,26 @@
+{
+  "name": "desko27-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@zeit/next-sass": "^0.2.0",
+    "next": "^6.0.3",
+    "node-sass": "^4.9.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desko27/desko27-portfolio.git"
+  },
+  "author": "desko27",
+  "license": "ISC"
+}
