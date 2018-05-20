@@ -3,17 +3,13 @@ import Link from 'next/link';
 
 import './index.scss';
 
-class Home extends React.Component {
-  render() {
-    return (
-      <div>
-        <div>Welcome to next.js!</div>
-        <Link href="/about">
-          <a>Go to about page</a>
-        </Link>
-      </div>
-    );
-  }
-}
+const Home = () => (
+  <div>
+    <div>Welcome to next.js!</div>
+    <Link href="/about">
+      Go to about page
+    </Link>
+  </div>
+);
 
 export default Home;

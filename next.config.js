@@ -2,7 +2,12 @@ const withSass = require('@zeit/next-sass')
 
 module.exports = withSass({
   webpack(config, options) {
-    // Further custom configuration here
+    if (options.dev) {
+      config.module.rules.push({
+        test: [/\.js$/, /\.jsx$/],
+        loader: 'eslint-loader',
+      });
+    }
     return config
   }
 })
