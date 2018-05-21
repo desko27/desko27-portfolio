@@ -15,8 +15,11 @@
     $transition-time: 0.3s;
     $transition-easing: ease-out;
     .item-text {
-      margin-left: 10px;
+      margin-left: 7px;
       display: inline-block;
+
+      transform: translateY(0);
+      @include transition($transition-easing, $transition-time, transform);
 
       position: relative;
       &:after {
@@ -30,19 +33,29 @@
         height: 1px;
         background: $white;
 
-        @include transition(transition-easing, $transition-time, height, width);
+        @include transition($transition-easing, $transition-time, height, width);
       }
     }
 
-    @include transition(transition-easing, $transition-time, color);
+    .icon {
+      transform: rotate(0) scale(1) translate(0, 0);
+      @include transition($transition-easing, $transition-time, transform);
+    }
+
+    @include transition($transition-easing, $transition-time, color);
 
     &:hover {
       color: $white !important;
       .item-text {
+        transform: translateY(-4px);
         &:after {
           height: 2px;
           width: 100%;
         }
+      }
+
+      .icon {
+        transform: rotate(-17deg) scale(1.3) translate(-2px, -4px);
       }
     }
 
