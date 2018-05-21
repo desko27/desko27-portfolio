@@ -1,6 +1,10 @@
 // import bulma with customizations
 @import 'sass/bulma.scss';
 
+// import custom mixins & functions
+@import 'sass/functions.scss';
+@import 'sass/transitions.scss';
+
 // import pages here in order to provide them bula vars & mixins
 @import 'layout/Header';
 @import 'layout/Footer';
@@ -8,10 +12,7 @@
 
 #logos-mix {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  @include reset(top, left, right, bottom);
 }
 
 body {

@@ -8,12 +8,42 @@
   justify-content: center;
 
   .item {
+    color: rgba($white, 0.5) !important;
     white-space: nowrap;
     font-size: 18px;
-    color: rgba($white, 0.6);
 
+    $transition-time: 0.3s;
+    $transition-easing: ease-out;
     .item-text {
       margin-left: 10px;
+      display: inline-block;
+
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        @include reset(left, right);
+        bottom: -5px;
+
+        @include hmargin(auto);
+        width: 0%;
+        height: 1px;
+        background: $white;
+
+        @include transition(transition-easing, $transition-time, height, width);
+      }
+    }
+
+    @include transition(transition-easing, $transition-time, color);
+
+    &:hover {
+      color: $white !important;
+      .item-text {
+        &:after {
+          height: 2px;
+          width: 100%;
+        }
+      }
     }
 
     margin-left: $lateral-item-margin;

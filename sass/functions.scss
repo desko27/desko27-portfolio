@@ -1,0 +1,144 @@
+///
+/// Takes a list of properties and sets them to zero.
+///
+/// @param  {list} $properties  List of properties.
+///
+/// @example scss - Set `margin-bottom` to zero.
+///   @include reset(margin-bottom);
+///
+/// @example scss - Set `top`, `right`, `bottom`, `left` properties to zero.
+///   @include reset(top, right, bottom, left);
+///
+@mixin reset($properties...) {
+  @each $property in $properties {
+    #{$property}: 0;
+  }
+}
+
+///
+/// Assign height & width in a graceful fashion.
+///
+/// @param  {pixels} $height
+/// @param  {pixels} $width [null]
+///
+/// @example scss - Pass a single value for square dimensions.
+///   @include size(50px);
+///   // height: 50px;
+///   // width: 50px;
+///
+/// @example scss - Pass two values for specific rectangle dimensions.
+///   @include size(50px, 20px);
+///   // height: 50px;
+///   // width: 20px;
+///
+@mixin size($height, $width: null) {
+  height: $height;
+
+  @if $width == null {
+    width: $height;
+
+  } @else {
+    width: $width;
+  }
+}
+
+///
+/// Creates the CSS for placing colorful links.
+/// Any hover color will be automatically disabled in touch devices.
+///
+/// @param  {color}  $color               Standard color.
+/// @param  {color}  $hover-color [null]  Hover color.
+/// @param  {string} $html-class  [null]  Class (or classes) from `<html>` tag if you
+///                                       want the styles to apply ONLY for that
+///                                       class (or classes).
+///
+/// @example scss - A link ~~to the past~~ in blue color (without hover color).
+///   .my-link {
+///     @include link-style(#00f);
+///   }
+///
+/// @example scss - A link in black color with a blue hover color.
+///   .my-link {
+///     @include link-style(#000, #00f);
+///   }
+///
+/// @example scss - Apply red link style ONLY when `.scrolling` class is present in `<html>` tag.
+///   .my-link {
+///     @include link-style(#f00, #f00, '.scrolling');
+///   }
+///
+@mixin link-style($color, $hover-color: null, $html-class: null) {
+  // base styles for link
+  #{$html-class} & {
+    cursor: pointer;
+    color: $color;
+    outline: 0 !important; // ie/edge needs !important here, don't know why...
+                           // (mindfucks about selectors' priority)
+
+    // smooth color transition
+    transition: color .2s ease-out;
+  }
+
+  #{$html-class} &:link,
+  #{$html-class} &:visited,
+  #{$html-class} &:active,
+  #{$html-class} &:focus {
+    text-decoration: none;
+    color: $color;
+  }
+
+  // don't use hover color in touch screens
+  html#{$html-class}:not(.mod_touchevents) &:hover {
+    text-decoration: underline;
+
+    @if $hover-color == null {
+      color: $color
+    } @else {
+      color: $hover-color;
+    }
+  }
+}
+
+///
+/// Adds padding-top & padding-bottom at once.
+/// @param  {pixels} $padding
+///
+@mixin vpadding($padding, $bot_padding: null) {
+  padding-top: $padding;
+  @if $bot_padding == null {
+    padding-bottom: $padding;
+  } @else {
+    padding-bottom: $bot_padding;
+  }
+}
+
+///
+/// Adds margin-top & margin-bottom at once.
+/// @param  {pixels} $margin
+///
+@mixin vmargin($margin, $bot_margin: null) {
+  margin-top: $margin;
+  @if $bot_margin == null {
+    margin-bottom: $margin;
+  } @else {
+    margin-bottom: $bot_margin;
+  }
+}
+
+///
+/// Adds padding-top & padding-bottom at once.
+/// @param  {pixels} $padding
+///
+@mixin hpadding($padding) {
+  padding-right: $padding;
+  padding-left: $padding;
+}
+
+///
+/// Adds margin-top & margin-bottom at once.
+/// @param  {pixels} $margin
+///
+@mixin hmargin($margin) {
+  margin-right: $margin;
+  margin-left: $margin;
+}
