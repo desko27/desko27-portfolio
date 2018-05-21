@@ -4,10 +4,32 @@ import logoSources from './logosMix.list';
 const canvasElement = document.getElementById('logos-mix');
 const app = new PIXI.Application({ transparent: true, view: canvasElement });
 
-// make it fullscreen
-const resize = () => app.renderer.resize(window.innerWidth, window.innerHeight);
-window.addEventListener('resize', resize);
-resize(); // execute it once
+// create a bounding box for the logos
+const logoBoundsPadding = 100;
+let logoBounds;
+
+// responsive scaling
+let responsiveScale;
+
+// be aware of resizings
+const resizeFunction = () => {
+  // resize canvas to the window to make it fullscreen
+  app.renderer.resize(window.innerWidth, window.innerHeight);
+
+  // update bounding box
+  logoBounds = new PIXI.Rectangle(
+    -logoBoundsPadding,
+    -logoBoundsPadding,
+    app.screen.width + (logoBoundsPadding * 2),
+    app.screen.height + (logoBoundsPadding * 2),
+  );
+
+  // update scaling
+  responsiveScale = Math.min(1, Math.max(0.3, window.innerWidth / 1920));
+};
+
+window.addEventListener('resize', resizeFunction);
+resizeFunction(); // execute it once
 
 const logos = logoSources.map((logoSrc) => {
   // create a new Sprite that uses the image name that we just generated as its source
@@ -39,22 +61,16 @@ const logos = logoSources.map((logoSrc) => {
   return logo;
 });
 
-// create a bounding box for the little logos
-const logoBoundsPadding = 100;
-const logoBounds = new PIXI.Rectangle(
-  -logoBoundsPadding,
-  -logoBoundsPadding,
-  app.screen.width + (logoBoundsPadding * 2),
-  app.screen.height + (logoBoundsPadding * 2),
-);
-
 app.ticker.add(() => {
   // iterate through the logos and update their position
-  for (let i = 0; i < logos.length; i += 1) {
-    const logo = logos[i];
+  logos.forEach((logo) => {
     logo.direction += logo.turningSpeed * 0.01;
     logo.x += Math.sin(logo.direction) * logo.speed;
     logo.y += Math.cos(logo.direction) * logo.speed;
+
+    // update scale - trying to be responsive!
+    logo.scale.x = responsiveScale;
+    logo.scale.y = responsiveScale;
 
     // wrap the logos by testing their bounds...
     if (logo.x < logoBounds.x) {
@@ -68,5 +84,5 @@ app.ticker.add(() => {
     } else if (logo.y > logoBounds.y + logoBounds.height) {
       logo.y -= logoBounds.height;
     }
-  }
+  });
 });
