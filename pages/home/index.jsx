@@ -1,21 +1,22 @@
 import React from 'react';
-import Link from 'next/link';
-
-import './index.scss';
 
 const Home = () => (
-  <div className="container">
+  <div className="home page container">
     <div className="columns">
       <div className="column">
-        <Link href="/about">
-          Go to about page
-        </Link>
+        <figure className="avatar-container">
+          <img
+            className="avatar"
+            src="/static/profile.jpg"
+            alt="Desko27's avatar"
+          />
+        </figure>
       </div>
       <div className="column">
-        <span className="icon">
-          <i className="fas fa-home" />
-        </span>
-        The second column
+        <div className="headline">
+          <h1 className="fullname">Ismael Ramon</h1>
+          <h2 className="position">Full-Stack Developer</h2>
+        </div>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import './_document.scss';
 
 import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 
 export default class MyDocument extends Document {
   render() {
@@ -17,8 +18,19 @@ export default class MyDocument extends Document {
           <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js" />
         </Head>
         <body>
-          <Header />
-          <Main />
+
+          <section className="hero is-dark is-fullheight">
+            <div className="hero-head">
+              <Header />
+            </div>
+            <div className="hero-body">
+              <Main />
+            </div>
+            <div className="hero-foot">
+              <Footer />
+            </div>
+          </section>
+
           <NextScript />
         </body>
       </html>

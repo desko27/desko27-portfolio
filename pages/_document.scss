@@ -1,14 +1,11 @@
-// import bulma values
-@import "bulma/sass/utilities/initial-variables";
-@import "bulma/sass/utilities/functions";
+// import bulma with customizations
+@import 'sass/bulma.scss';
 
-// set bulma vars
-$family-primary: 'Lato', sans-serif;
+// import pages here in order to provide them bula vars & mixins
+@import 'layout/Header';
+@import 'layout/Footer';
+@import 'pages/home/index';
 
-// finish bulma import
-@import "bulma/bulma";
-
-body {
-  background: #292929;
-  color: #fff;
+#__next {
+  width: 100%;
 }

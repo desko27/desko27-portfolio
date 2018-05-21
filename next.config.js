@@ -9,8 +9,5 @@ module.exports = withSass({
       });
     }
     return config
-  },
-  sassLoaderOptions: {
-    includePaths: ['node_modules']
   }
 })
