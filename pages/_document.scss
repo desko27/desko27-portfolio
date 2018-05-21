@@ -1,0 +1,14 @@
+// import bulma values
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+
+// set bulma vars
+$family-primary: 'Lato', sans-serif;
+
+// finish bulma import
+@import "bulma/bulma";
+
+body {
+  background: #292929;
+  color: #fff;
+}
