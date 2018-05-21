@@ -15,6 +15,10 @@ export default () => (
         <i className="fab fa-linkedin" />
         <span className="item-text">LinkedIn</span>
       </span>
+      <span className="item">
+        <i className="fab fa-twitter" />
+        <span className="item-text">Twitter</span>
+      </span>
     </nav>
   </div>
 );

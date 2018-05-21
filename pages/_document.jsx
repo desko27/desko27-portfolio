@@ -19,6 +19,8 @@ export default class MyDocument extends Document {
         </Head>
         <body>
 
+          <canvas id="logos-mix" />
+
           <section className="hero is-dark is-fullheight">
             <div className="hero-head">
               <Header />
