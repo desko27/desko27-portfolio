@@ -1,6 +1,9 @@
 import * as PIXI from 'pixi.js';
 import logoSources from './logosMix.list';
 
+// drop console log message about pixi
+PIXI.utils.skipHello();
+
 const canvasElement = document.getElementById('logos-mix');
 const app = new PIXI.Application({ transparent: true, view: canvasElement });
 
