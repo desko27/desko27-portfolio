@@ -55,7 +55,6 @@ app.ticker.add(() => {
     logo.direction += logo.turningSpeed * 0.01;
     logo.x += Math.sin(logo.direction) * logo.speed;
     logo.y += Math.cos(logo.direction) * logo.speed;
-    logo.rotation = -logo.direction - (Math.PI / 2);
 
     // wrap the logos by testing their bounds...
     if (logo.x < logoBounds.x) {
