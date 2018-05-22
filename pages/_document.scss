@@ -13,7 +13,16 @@
 #logos-mix {
   position: absolute;
   @include reset(top, left, right, bottom);
-  opacity: 0.5;
+
+  @include transition($easeOutBack, 2s, opacity, transform);
+  transition-delay: 0.2s;
+  opacity: 0;
+  transform: rotate(-10deg) translateY(500px);
+
+  &.ready {
+    opacity: 0.5;
+    transform: rotate(0) translateY(0);
+  }
 }
 
 body {

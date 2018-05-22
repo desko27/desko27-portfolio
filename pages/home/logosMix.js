@@ -61,7 +61,14 @@ const logos = logoSources.map((logoSrc) => {
   return logo;
 });
 
+let started = false;
+
 app.ticker.add(() => {
+  if (!started) {
+    started = true;
+    canvasElement.classList.add('ready');
+  }
+
   // iterate through the logos and update their values
   logos.forEach((logo) => {
     logo.direction += logo.turningSpeed * 0.01;
