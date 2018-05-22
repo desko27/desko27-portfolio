@@ -13,6 +13,7 @@
 #logos-mix {
   position: absolute;
   @include reset(top, left, right, bottom);
+  opacity: 0.5;
 }
 
 body {
