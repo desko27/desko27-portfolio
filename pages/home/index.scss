@@ -23,6 +23,15 @@
     font-size: 50px;
     .fullname { font-weight: 700; }
     .position { font-weight: 300; }
+
+    // theater stuff
+    #position {
+      &:after {
+        @keyframes blinker { 50% { opacity: 0; } }
+        animation: blinker 0.8s steps(1, start) infinite;
+        content: '|';
+      }
+    }
   }
 
   @include mobile {
