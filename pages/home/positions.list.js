@@ -5,4 +5,6 @@ export default [
   'Technology enthusiast',
   '🎌 Japanese student',
   '💡🎉 Emoji fanatic',
+  'Problem solver',
+  'Self-taught programmer',
 ];

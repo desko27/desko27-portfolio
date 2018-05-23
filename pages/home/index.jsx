@@ -23,7 +23,7 @@ class Home extends React.Component {
         .addScene(extraTime ? 3500 : 2000);
     };
 
-    theater.addActor('position', { accuracy: 1, speed: 0.9 });
+    theater.addActor('position', { accuracy: 1, speed: 0.92 });
     addPosition(firstPosition, true); // first one
     shuffle(positionsList);
     positionsList.forEach(p => addPosition(p));
