@@ -21,8 +21,16 @@
     justify-content: center;
 
     font-size: 50px;
-    .fullname { font-weight: 700; }
-    .position { font-weight: 300; }
+    .fullname {
+      font-weight: 700;
+    }
+    .position {
+      font-size: 46px;
+      font-weight: 300;
+      .emoji:not(:empty) {
+        margin-right: 5px;
+      }
+    }
 
     // theater stuff
     #position {
