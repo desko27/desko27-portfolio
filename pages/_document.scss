@@ -11,7 +11,7 @@
 @import 'pages/home/index';
 
 #logos-mix {
-  position: absolute;
+  position: fixed;
   @include reset(top, left, right, bottom);
 
   @include transition($easeOutBack, 2s, opacity, transform);
