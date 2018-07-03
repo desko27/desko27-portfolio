@@ -8,12 +8,13 @@
   justify-content: center;
 
   .item {
-    color: rgba($white, 0.5) !important;
+    color: rgba($white, .5) !important;
     white-space: nowrap;
     font-size: 18px;
 
-    $transition-time: 0.3s;
+    $transition-time: .3s;
     $transition-easing: ease-out;
+
     .item-text {
       margin-left: 7px;
       display: inline-block;
@@ -22,8 +23,9 @@
       @include transition($transition-easing, $transition-time, transform);
 
       position: relative;
+
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         @include reset(left, right);
         bottom: -5px;
@@ -46,8 +48,10 @@
 
     &:hover {
       color: $white !important;
+
       .item-text {
         transform: translateY(-4px);
+
         &:after {
           height: 2px;
           width: 100%;
@@ -60,10 +64,11 @@
     }
 
     margin-left: $lateral-item-margin;
+
     & + .item:before {
       margin-right: $lateral-item-margin;
       display: inline-block;
-      content: '|';
+      content: "|";
     }
   }
 }

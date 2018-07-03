@@ -5,6 +5,13 @@
     "**/*.jsx"
   ],
   "rules": {
-    "max-nesting-depth": null
+    "max-nesting-depth": null,
+    "selector-max-id": null,
+    "order/order": null,
+    "at-rule-empty-line-before": [
+      "always", {
+        "ignoreAtRules": ["import", "include"]
+      }
+    ]
   }
 }

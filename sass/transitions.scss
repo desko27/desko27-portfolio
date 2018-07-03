@@ -12,57 +12,61 @@
 /// @param    {time} $duration         The duration of the transition in `seconds`.
 /// @param    {list} $properties...    One or more properties.
 ///
-/// @example scss - Set an `ease-out` transition of a `0.3 seconds` duration for `opacity` property.
+/// @example scss - Set an `ease-out` transition of a `.3 seconds` duration for `opacity` property.
 ///   @include transition(ease-out, .3s, opacity);
 ///
-/// @example scss - Set an `$easeOutCubic` transition of a `0.3 seconds` duration for `opacity`, `color`, `transform` properties.
+/// @example scss - Set an `$easeOutCubic` transition of a `.3 seconds` duration for `opacity`, `color`, `transform` properties.
 ///   @include transition($easeOutCubic, .3s, opacity, color, transform);
 ///
+
 @mixin transition($timing-function, $duration, $properties...) {
+
   @if length($properties) > 1 {
     transition-property: $properties;
     transition-duration: $duration;
     transition-timing-function: $timing-function;
-  } @else {
+  }
+
+  @else {
     transition: $timing-function $duration $properties;
   }
 }
 
 // jQuery transitions
 // StackOverflow: https://goo.gl/QeDsOa
-$swing: cubic-bezier(0.02, 0.01, 0.47, 1);
+$swing: cubic-bezier(.02, .01, .47, 1);
 
 // easing vars taken from easings.net
 // Github: https://goo.gl/vXLQ9W
-$linear         : cubic-bezier(0.250, 0.250, 0.750, 0.750);
-$ease           : cubic-bezier(0.250, 0.100, 0.250, 1.000);
-$ease-in        : cubic-bezier(0.420, 0.000, 1.000, 1.000);
-$ease-out       : cubic-bezier(0.000, 0.000, 0.580, 1.000);
-$ease-in-out    : cubic-bezier(0.420, 0.000, 0.580, 1.000);
+$linear         : cubic-bezier(.250, .250, .750, .750);
+$ease           : cubic-bezier(.250, .100, .250, 1.000);
+$ease-in        : cubic-bezier(.420, .000, 1.000, 1.000);
+$ease-out       : cubic-bezier(.000, .000, .580, 1.000);
+$ease-in-out    : cubic-bezier(.420, .000, .580, 1.000);
 
-$easeInQuad     : cubic-bezier(0.550, 0.085, 0.680, 0.530);
-$easeInCubic    : cubic-bezier(0.550, 0.055, 0.675, 0.190);
-$easeInQuart    : cubic-bezier(0.895, 0.030, 0.685, 0.220);
-$easeInQuint    : cubic-bezier(0.755, 0.050, 0.855, 0.060);
-$easeInSine     : cubic-bezier(0.470, 0.000, 0.745, 0.715);
-$easeInExpo     : cubic-bezier(0.950, 0.050, 0.795, 0.035);
-$easeInCirc     : cubic-bezier(0.600, 0.040, 0.980, 0.335);
-$easeInBack     : cubic-bezier(0.600, -0.280, 0.735, 0.045);
+$easeInQuad     : cubic-bezier(.550, .085, .680, .530);
+$easeInCubic    : cubic-bezier(.550, .055, .675, .190);
+$easeInQuart    : cubic-bezier(.895, .030, .685, .220);
+$easeInQuint    : cubic-bezier(.755, .050, .855, .060);
+$easeInSine     : cubic-bezier(.470, .000, .745, .715);
+$easeInExpo     : cubic-bezier(.950, .050, .795, .035);
+$easeInCirc     : cubic-bezier(.600, .040, .980, .335);
+$easeInBack     : cubic-bezier(.600, -.280, .735, .045);
 
-$easeOutQuad    : cubic-bezier(0.250, 0.460, 0.450, 0.940);
-$easeOutCubic   : cubic-bezier(0.215, 0.610, 0.355, 1.000);
-$easeOutQuart   : cubic-bezier(0.165, 0.840, 0.440, 1.000);
-$easeOutQuint   : cubic-bezier(0.230, 1.000, 0.320, 1.000);
-$easeOutSine    : cubic-bezier(0.390, 0.575, 0.565, 1.000);
-$easeOutExpo    : cubic-bezier(0.190, 1.000, 0.220, 1.000);
-$easeOutCirc    : cubic-bezier(0.075, 0.820, 0.165, 1.000);
-$easeOutBack    : cubic-bezier(0.175, 0.885, 0.320, 1.275);
+$easeOutQuad    : cubic-bezier(.250, .460, .450, .940);
+$easeOutCubic   : cubic-bezier(.215, .610, .355, 1.000);
+$easeOutQuart   : cubic-bezier(.165, .840, .440, 1.000);
+$easeOutQuint   : cubic-bezier(.230, 1.000, .320, 1.000);
+$easeOutSine    : cubic-bezier(.390, .575, .565, 1.000);
+$easeOutExpo    : cubic-bezier(.190, 1.000, .220, 1.000);
+$easeOutCirc    : cubic-bezier(.075, .820, .165, 1.000);
+$easeOutBack    : cubic-bezier(.175, .885, .320, 1.275);
 
-$easeInOutQuad  : cubic-bezier(0.455, 0.030, 0.515, 0.955);
-$easeInOutCubic : cubic-bezier(0.645, 0.045, 0.355, 1.000);
-$easeInOutQuart : cubic-bezier(0.770, 0.000, 0.175, 1.000);
-$easeInOutQuint : cubic-bezier(0.860, 0.000, 0.070, 1.000);
-$easeInOutSine  : cubic-bezier(0.445, 0.050, 0.550, 0.950);
-$easeInOutExpo  : cubic-bezier(1.000, 0.000, 0.000, 1.000);
-$easeInOutCirc  : cubic-bezier(0.785, 0.135, 0.150, 0.860);
-$easeInOutBack  : cubic-bezier(0.680, -0.550, 0.265, 1.550);
+$easeInOutQuad  : cubic-bezier(.455, .030, .515, .955);
+$easeInOutCubic : cubic-bezier(.645, .045, .355, 1.000);
+$easeInOutQuart : cubic-bezier(.770, .000, .175, 1.000);
+$easeInOutQuint : cubic-bezier(.860, .000, .070, 1.000);
+$easeInOutSine  : cubic-bezier(.445, .050, .550, .950);
+$easeInOutExpo  : cubic-bezier(1.000, .000, .000, 1.000);
+$easeInOutCirc  : cubic-bezier(.785, .135, .150, .860);
+$easeInOutBack  : cubic-bezier(.680, -.550, .265, 1.550);

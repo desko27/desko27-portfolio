@@ -1,9 +1,9 @@
 // import bulma values
-@import '~bulma/sass/utilities/initial-variables';
-@import '~bulma/sass/utilities/functions';
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
 
 // set bulma vars
-$family-primary: 'Lato', sans-serif;
+$family-primary: "Lato", sans-serif;
 
 // import the rest of bulma
-@import '~bulma/bulma';
+@import "~bulma/bulma";

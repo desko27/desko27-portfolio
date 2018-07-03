@@ -1,26 +1,26 @@
 // import bulma with customizations
-@import 'sass/bulma.scss';
+@import "sass/bulma.scss";
 
 // import custom mixins & functions
-@import 'sass/functions.scss';
-@import 'sass/transitions.scss';
+@import "sass/functions.scss";
+@import "sass/transitions.scss";
 
 // import component styles here in order to provide them with bulma vars & mixins
-@import 'layout/Header';
-@import 'layout/Footer';
-@import 'pages/home/index';
+@import "layout/Header";
+@import "layout/Footer";
+@import "pages/home/index";
 
 #logos-mix {
   position: fixed;
   @include reset(top, left, right, bottom);
 
   @include transition($easeOutBack, 2s, opacity, transform);
-  transition-delay: 0.2s;
+  transition-delay: .2s;
   opacity: 0;
   transform: rotate(-10deg) translateY(500px);
 
   &.ready {
-    opacity: 0.5;
+    opacity: .5;
     transform: rotate(0) translateY(0);
   }
 }

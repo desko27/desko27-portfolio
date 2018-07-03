@@ -11,7 +11,7 @@
       border-radius: 50%;
 
       // nice shadow
-      box-shadow: 6em 0 rgba(#000, 0.5);
+      box-shadow: 6em 0 rgba(#000, .5);
       transform: translateX(-3em);
     }
   }
@@ -24,12 +24,15 @@
     justify-content: center;
 
     font-size: 50px;
+
     .fullname {
       font-weight: 700;
     }
+
     .position {
-      font-size: 0.9em;
+      font-size: .9em;
       font-weight: 300;
+
       .emoji:not(:empty) {
         margin-right: 5px;
       }
@@ -37,15 +40,18 @@
 
     // theater stuff
     #position {
+
       &:after {
+        // stylelint-disable-next-line
         @keyframes blinker { 50% { opacity: 0; } }
-        animation: blinker 0.8s steps(1, start) infinite;
-        content: '|';
+        animation: blinker .8s steps(1, start) infinite;
+        content: "|";
       }
     }
   }
 
   @include mobile {
+
     .avatar-container {
       transform: translateY(0);
       max-width: 530px;
